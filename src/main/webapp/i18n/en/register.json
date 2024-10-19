@@ -1,0 +1,29 @@
+{
+  "register": {
+    "title": "Registration",
+    "form": {
+      "button": "Register"
+    },
+    "messages": {
+      "validate": {
+        "mobile": {
+          "minlength": "Your mobile number is required to be at least 10 character.",
+          "maxlength": "Your mobile number cannot be longer than 10 characters.",
+          "pattern": "Your mobile number is invalid."
+        },
+        "firstName": {
+          "minlength": "Your mobile number is required to be at least 10 character.",
+          "maxlength": "Your mobile number cannot be longer than 10 characters.",
+          "pattern": "Your mobile number is invalid."
+        }
+      },
+      "success": "<strong>Registration saved!</strong> Please check your email for confirmation.",
+      "error": {
+        "fail": "<strong>Registration failed!</strong> Please try again later.",
+        "userexists": "<strong>Login name already registered!</strong> Please choose another one.",
+        "emailormobilerequired": "<strong>Either Email or Mobile is required!</strong> Please enter atleast one.",
+        "emailexists": "<strong>Email is already in use!</strong> Please choose another one."
+      }
+    }
+  }
+}

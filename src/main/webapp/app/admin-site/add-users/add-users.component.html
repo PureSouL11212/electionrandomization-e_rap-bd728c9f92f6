@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <mat-card>
+      <mat-card-header class="page-card-header">
+        <div class="icon-header ml-2">
+          <i class="icofont icofont-dashboard-web float-left"></i>
+        </div>
+        <span class="page-title">Add User</span>
+      </mat-card-header>
+      <mat-card-content class="page-card-content">
+        <form #newUserForm="ngForm">
+  
+          <div class="row mb-3">
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input
+                  matInput
+                  name="firstName"
+                  placeholder="Enter First Name"
+                  [(ngModel)]="user.firstName"
+                  required
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input
+                  matInput
+                  name="lastName"
+                  placeholder="Enter Last Name"
+                  [(ngModel)]="user.lastName"
+                  required
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>Email ID</mat-label>
+                <input
+                  matInput
+                  name="emailId"
+                  placeholder="Enter Email ID"
+                  [(ngModel)]="user.emailId"
+                  required
+                />
+              </mat-form-field>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <input
+                  matInput
+                  name="phoneNo"
+                  placeholder="Enter Phone Number"
+                  [(ngModel)]="user.phoneNo"
+                  required
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>District</mat-label>
+                <mat-select [(ngModel)]="user.district" name="district" required>
+                  <mat-option *ngFor="let district of districts" [value]="district.value">{{ district.label }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>Role</mat-label>
+                <mat-select [(ngModel)]="user.role" name="role" required>
+                  <mat-option *ngFor="let role of roles" [value]="role.value">{{ role.label }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>Department</mat-label>
+                <mat-select [(ngModel)]="user.department" name="department" required>
+                  <mat-option *ngFor="let department of departments" [value]="department.value">{{ department.label }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <button mat-raised-button color="primary" (click)="onSave()" [disabled]="!newUserForm.form.valid">Save</button>
+              <button mat-raised-button color="warn" type="button">Cancel</button>
+            </div>
+          </div>
+          
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

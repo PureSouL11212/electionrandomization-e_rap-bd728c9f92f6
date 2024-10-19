@@ -1,0 +1,22 @@
+.ng-invalid:not(form) {
+  border-left: none;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: none;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+table td {
+  border: solid 1px #fab;
+  word-wrap: break-word;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+}

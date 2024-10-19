@@ -1,0 +1,79 @@
+
+<!-- add-district.component.html -->
+<div class="container-fluid">
+    <mat-card>
+      <mat-card-header class="page-card-header">
+        <div class="icon-header ml-2">
+          <i class="icofont icofont-dashboard-web float-left"></i>
+        </div>
+        <span class="page-title">Add District </span>
+      </mat-card-header>
+      <mat-card-content class="page-card-content">
+        <form #newDistrictForm="ngForm">
+  
+          <div class="row mb-3">
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>District Name</mat-label>
+                <input
+                  matInput
+                  name="districtname"
+                  placeholder="Enter District Name"
+                  maxlength="150"
+                  minlength="3"
+                  [(ngModel)]="district.districtname"
+                  required
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>District Name in Local Language</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter District Name in Local Language"
+                  name="districtnamell"
+                  [(ngModel)]="district.districtnamell"
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>District Code</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter District Code"
+                  name="districtcode"
+                  [(ngModel)]="district.districtcode"
+                  required
+                />
+              </mat-form-field>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <mat-form-field class="my-form-full-width" appearance="outline">
+                <mat-label>State</mat-label>
+                <input
+                  matInput
+                  name="state"
+                  placeholder="Enter State"
+                  [(ngModel)]="district.state"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <div class="col-xl-4 col-lg-4 col-md-4">
+              <button mat-raised-button color="primary" (click)="onSave()" [disabled]="!newDistrictForm.form.valid">Save</button>
+              <button mat-raised-button color="warn" type="button">Cancel</button>
+            </div>
+          </div>
+          
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

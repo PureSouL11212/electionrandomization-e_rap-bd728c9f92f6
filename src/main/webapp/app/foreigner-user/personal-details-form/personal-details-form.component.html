@@ -1,0 +1,853 @@
+<div>
+
+  <mat-card-header class="page-card-header">
+    <div class="icon-header ml-2"><i class="icofont icofont-dashboard-web float-left"></i></div>
+    <span class="page-title">Apply Permit </span>
+  </mat-card-header>
+
+  <mat-stepper [linear]="isLinear" #stepper>
+    <!-- Step 1: Personal Information & Address -->
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>PERSONAL DETAILS</ng-template>
+        <div class="row">
+          <h2 style="color: #007bff; font-weight: bold;">Personal Details</h2><br><br>
+          <hr>
+
+          <h2 style="color: #007bff; font-size: 20px;">Upload your Photograph</h2><br>
+          <div>
+            <input type="file" (change)="onFileChange($event)" accept="image/*" required>
+            <img *ngIf="rapapplicantdetails.passPhoto" [src]="rapapplicantdetails.passPhoto" width="100" height="100"
+              alt="Passport Photo">
+          </div>
+          <br>
+          <br>
+
+          <!-- First Name -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>First Name</mat-label>
+              <input matInput placeholder="Enter first name" [(ngModel)]="rapapplicantdetails.firstName"
+                name="firstName" required>
+            </mat-form-field>
+          </div>
+
+          <!-- Middle Name -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Middle Name</mat-label>
+              <input matInput placeholder="Enter middle name" [(ngModel)]="rapapplicantdetails.middleName"
+                name="middleName" required>
+            </mat-form-field>
+          </div>
+
+          <!-- Last Name -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="Enter last name" [(ngModel)]="rapapplicantdetails.lastName" name="lastName"
+                required>
+            </mat-form-field>
+          </div>
+
+          <!-- Gender -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Gender</mat-label>
+              <mat-select [(ngModel)]="rapapplicantdetails.gender" name="gender" required>
+                <mat-option value="">Select gender</mat-option>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+                <mat-option value="other">Other</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="rapapplicantdetails.dob" name="dob" required>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker> <!-- Added datepicker component -->
+            </mat-form-field>
+          </div>
+
+
+          <!-- Father's Name -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Father's Name</mat-label>
+              <input matInput placeholder="Enter father's name" [(ngModel)]="rapapplicantdetails.fatherName"
+                name="fatherName" required>
+            </mat-form-field>
+          </div>
+
+          <!-- Email -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Email ID</mat-label>
+              <input matInput type="email" placeholder="Enter email address" [(ngModel)]="rapapplicantdetails.email"
+                name="email" required>
+            </mat-form-field>
+          </div>
+
+          <!-- Contact Number -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Contact Number</mat-label>
+              <input matInput placeholder="Enter contact number" [(ngModel)]="rapapplicantdetails.contact"
+                name="contact" required>
+            </mat-form-field>
+          </div>
+
+          <!-- NATIONALITY  -->
+          <h2 style="color: #007bff; font-size: 20px;">Choose Nationality and Country Of Birth</h2><br><br>
+
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Choose Nationality</mat-label>
+              <mat-select [(ngModel)]="rapapplicantdetails.nationality" name="nationality" required>
+                <mat-option value="">Select nationality</mat-option>
+                <mat-option value="nationality1">PRC</mat-option>
+                <mat-option value="nationality3">Nepal</mat-option>
+                <mat-option value="nationality2">Nationality 2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <!--Country of Birth-->
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Country of Birth</mat-label>
+              <mat-select [(ngModel)]="rapapplicantdetails.birthCountry" name="birthCountry" required>
+                <mat-option value="">Select country of birth</mat-option>
+                <mat-option value="country1">PRC</mat-option>
+                <mat-option value="country2">Country 2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <br>
+        </div>
+
+        <!-- Stepper navigation buttons -->
+        <div class="button-row">
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Step 2: ADDRESS -->
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>ADDRESS DETAILS</ng-template><br>
+
+
+        <div>
+
+
+
+          <!-- Residential Address -->
+          <h3 style="color: #007bff; font-weight: bold;">Residential Address</h3>
+          <div class="row">
+            <!-- House Number -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>House Number</mat-label>
+                <input matInput placeholder="Enter house number"
+                  [(ngModel)]="rapapplicantdetails.residentialAddress.houseNumber" name="residentialHouseNumber"
+                  required>
+              </mat-form-field>
+            </div>
+
+            <!-- Street/Locality -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Street/Locality</mat-label>
+                <input matInput placeholder="Enter street/locality"
+                  [(ngModel)]="rapapplicantdetails.residentialAddress.street" name="residentialStreet" required>
+              </mat-form-field>
+            </div>
+
+            <!-- Pincode -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Pincode/Zipcode</mat-label>
+                <input matInput placeholder="Enter pincode/zipcode"
+                  [(ngModel)]="rapapplicantdetails.residentialAddress.pincode" name="residentialPincode" required>
+              </mat-form-field>
+            </div>
+
+            <!-- City/State -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>City/State</mat-label>
+                <input matInput placeholder="Enter city/state"
+                  [(ngModel)]="rapapplicantdetails.residentialAddress.state" name="residentialCity" required>
+              </mat-form-field>
+            </div>
+
+            <!-- Country -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Country</mat-label>
+                <input matInput placeholder="Enter country" [(ngModel)]="rapapplicantdetails.residentialAddress.country"
+                  name="residentialCountry" required>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Local Address -->
+
+          <mat-divider></mat-divider>
+
+          <!-- Added a button-row div to apply the styling -->
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="color: #007bff; font-weight: bold;">Permanent Address</h3>
+            <div class="col-md-4 button-row">
+              <button mat-raised-button (click)="copyResidentaladdress()">Same as Above</button>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <!-- House Number -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>House Number</mat-label>
+                <input matInput placeholder="Enter house number"
+                  [(ngModel)]="rapapplicantdetails.permanentAddress.houseNumber" name="permanentHouseNumber" required>
+              </mat-form-field>
+            </div>
+
+            <!-- Street/Locality -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Street/Locality</mat-label>
+                <input matInput placeholder="Enter street/locality"
+                  [(ngModel)]="rapapplicantdetails.permanentAddress.street" name="permanentStreet" required>
+              </mat-form-field>
+            </div>
+
+            <!-- Pincode -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Pincode/Zipcode</mat-label>
+                <input matInput placeholder="Enter pincode/zipcode"
+                  [(ngModel)]="rapapplicantdetails.permanentAddress.pincode" name="permanentPincode" required>
+              </mat-form-field>
+            </div>
+            <!-- City/State -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>City/State</mat-label>
+                <input matInput placeholder="Enter city/state" [(ngModel)]="rapapplicantdetails.permanentAddress.state"
+                  name="permanentCity" required>
+              </mat-form-field>
+            </div>
+            <!-- Country -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Country</mat-label>
+                <input matInput placeholder="Enter country" [(ngModel)]="rapapplicantdetails.permanentAddress.country"
+                  name="permanentCountry" required>
+              </mat-form-field>
+            </div>
+            <!-- Save as Above Button -->
+
+          </div>
+          <mat-divider></mat-divider>
+          <!-- Passport Address -->
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="color: #007bff; font-weight: bold;">Passport Address</h3>
+            <div class="col-md-4 button-row">
+              <button mat-raised-button (click)="copyPermanentaddress()">Same as Above</button>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <!-- House Number -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>House Number</mat-label>
+                <input matInput placeholder="Enter house number"
+                  [(ngModel)]="rapapplicantdetails.passportAddress.houseNumber" name="passportHouseNumber" required>
+              </mat-form-field>
+            </div>
+
+            <!-- Street/Locality -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Street/Locality</mat-label>
+                <input matInput placeholder="Enter street/locality"
+                  [(ngModel)]="rapapplicantdetails.passportAddress.street" name="passportStreet" required>
+              </mat-form-field>
+            </div>
+
+            <!-- Pincode -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Pincode/Zipcode</mat-label>
+                <input matInput placeholder="Enter pincode/zipcode"
+                  [(ngModel)]="rapapplicantdetails.passportAddress.pincode" name="passportPincode" required>
+              </mat-form-field>
+            </div>
+
+            <!-- City/State -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>City/State</mat-label>
+                <input matInput placeholder="Enter city/state" [(ngModel)]="rapapplicantdetails.passportAddress.state"
+                  name="passportCity" required>
+              </mat-form-field>
+            </div>
+
+            <!-- Country -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Country</mat-label>
+                <input matInput placeholder="Enter country" [(ngModel)]="rapapplicantdetails.passportAddress.country"
+                  name="passportCountry" required>
+              </mat-form-field>
+            </div>
+
+            <!-- Save as Above Button -->
+            <div class="col-md-4">
+
+            </div>
+          </div>
+        </div>
+        <!-- Stepper navigation buttons -->
+        <div class="button-row">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Step 4: upload Passport Details -->
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Upload Identification Details</ng-template><br>
+
+        <!-- Section 1: Passport Details -->
+        <div class="passportandvisa">
+          <section class="passportDetails">
+            <h2 style="color: #007bff; font-weight: bold;">Passport Details</h2>
+            <hr>
+
+            <!-- Passport Number -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Passport Number</mat-label>
+                <input matInput placeholder="Enter Passport Number"
+                  [(ngModel)]="rapapplicantdetails.passportDetails.passportNumber" name="passportNumber" required>
+              </mat-form-field>
+            </div><br>
+
+            <!-- Passport Type -->
+            <div class="col-md-6">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Passport Type</mat-label>
+                <mat-select [(ngModel)]="rapapplicantdetails.passportDetails.passportType" name="passportType" required>
+                  <mat-option value="">Select Passport Type</mat-option>
+                  <mat-option value="diplomatic">Diplomatic Passport</mat-option>
+                  <mat-option value="official">Official/UN Passport</mat-option>
+                  <mat-option value="ordinary">Ordinary Passport</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div><br>
+
+            <!-- Passport Valid Till -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Passport Valid Till</mat-label>
+                <input matInput [matDatepicker]="pickerpassport"
+                  [(ngModel)]="rapapplicantdetails.passportDetails.passportValidTill" name="passportValidTill" required>
+                <mat-datepicker-toggle matIconSuffix [for]="pickerpassport"></mat-datepicker-toggle>
+                <mat-datepicker #pickerpassport></mat-datepicker>
+              </mat-form-field>
+            </div><br>
+
+            <!-- Copy of Passport -->
+            <h2 style="color: #007bff; font-size: 20px;">Upload Copy of Passport</h2><br>
+            <div>
+              <input type="file" (change)="onPassportFileChange($event)" accept="image/*" required>
+              <img *ngIf="rapapplicantdetails.passportDetails.passportCopy"
+                [src]="rapapplicantdetails.passportDetails.passportCopy" width="100" height="100" alt="Passport Copy">
+            </div><br>
+            <hr>
+            <br>
+          </section>
+          <!-- Section 2: Visa Details -->
+          <section class="visaDetails">
+            <h2 style="color: #007bff; font-weight: bold;">Visa Details</h2><br>
+
+            <!-- Visa Number -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Visa Number</mat-label>
+                <input matInput placeholder="Enter Visa Number" [(ngModel)]="rapapplicantdetails.visaDetails.visaNumber"
+                  name="visaNumber" required>
+              </mat-form-field>
+            </div><br>
+
+            <!-- Visa Type -->
+            <div class="col-md-6">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Visa Type</mat-label>
+                <mat-select [(ngModel)]="rapapplicantdetails.visaDetails.visaType" name="visaType" required>
+                  <mat-option value="">Select Visa Type</mat-option>
+                  <mat-option value="tourist">Tourist Visa</mat-option>
+                  <mat-option value="business">Business Visa</mat-option>
+                  <mat-option value="student">Student Visa</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div><br>
+
+            <!-- Visa Expiry Date -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Visa Expiry Date</mat-label>
+                <input matInput [matDatepicker]="pickervisa" [(ngModel)]="rapapplicantdetails.visaDetails.visaValidTill"
+                  name="visaExpiryDate" required>
+                <mat-datepicker-toggle matIconSuffix [for]="pickervisa"></mat-datepicker-toggle>
+                <mat-datepicker #pickervisa></mat-datepicker>
+              </mat-form-field>
+            </div><br>
+            <div>
+
+              <h2 style="color: #007bff; font-size: 20px;">Upload Copy of Visa</h2><br>
+              <input type="file" (change)="onVisaFileChange($event)" accept="image/*" required>
+              <img *ngIf="rapapplicantdetails.visaDetails.visaCopy" [src]="rapapplicantdetails.visaDetails.visaCopy"
+                width="100" height="100" alt="Visa Copy">
+            </div><br>
+            <hr>
+          </section>
+        </div>
+
+        <!-- Section 3: Citizenship Details -->
+        <section class="citizenshipDetails" *ngIf="rapapplicantdetails.nationality === 'nationality3'">
+          <h2 style="color: #007bff; font-weight: bold;">Citizenship Details</h2><br>
+          <div class="row">
+            <!-- Start of row for citizenship details -->
+            <!-- Citizenship Number -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Citizenship Number</mat-label>
+                <input matInput placeholder="Enter Citizenship Number"
+                  [(ngModel)]="rapapplicantdetails.citizenshipDetails.citizenshipNumber" name="citizenshipNumber"
+                  required>
+              </mat-form-field>
+            </div>
+
+            <!-- Citizenship Issue Date -->
+            <div class="col-md-4">
+              <mat-form-field appearance="outline" class="my-form-full-width">
+                <mat-label>Citizenship Issue Date</mat-label>
+                <input matInput [matDatepicker]="pickercitizenship"
+                  [(ngModel)]="rapapplicantdetails.citizenshipDetails.citizenshipIssueDate" name="citizenshipIssueDate"
+                  required>
+                <mat-datepicker-toggle matIconSuffix [for]="pickercitizenship"></mat-datepicker-toggle>
+                <mat-datepicker #pickercitizenship></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <!-- Citizenship Proof Photo Upload -->
+
+            <h2 style="color: #007bff; font-size: 20px;">Upload Citizenship Proof</h2><br>
+            <div class="col-md-4">
+              <input type="file" (change)="onCitizenshipFileChange($event)" accept="image/*" required>
+              <img *ngIf="rapapplicantdetails.citizenshipDetails.citizenshipCopy"
+                [src]="rapapplicantdetails.citizenshipDetails.citizenshipCopy" width="100" height="100"
+                alt="Citizenship Proof">
+            </div>
+          </div> <!-- End of row for citizenship details -->
+        </section>
+        <!-- Section 4: MHA Clearance Certificate -->
+        <section class="mhaCertificate"
+          *ngIf="rapapplicantdetails.nationality === 'nationality1'|| rapapplicantdetails.birthCountry === 'country1'">
+          <h2 style="color: #007bff; font-weight: bold;">MHA Clearance Certificate</h2><br>
+
+          <!-- MHA Certificate -->
+          <h2 style="color: #007bff; font-size: 20px;">Upload MHA Clearance Certificate</h2><br>
+          <div>
+            <input type="file" (change)="onMHAFileChange($event)" accept="image/*" required>
+            <img *ngIf="rapapplicantdetails.rapapplicantsMHAclearance.mhaClearanceCertificate"
+              [src]="rapapplicantdetails.rapapplicantsMHAclearance.mhaClearanceCertificate" width="100" height="100"
+              alt="MHA Clearance certificate">
+          </div><br>
+
+          <!-- Certificate valid till -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Certificate Valid Till</mat-label>
+              <input matInput [matDatepicker]="pickermha"
+                [(ngModel)]="rapapplicantdetails.rapapplicantsMHAclearance.mhaCertificateValidTill"
+                name="meacertificateValidTill" required>
+              <mat-datepicker-toggle matIconSuffix [for]="pickermha"></mat-datepicker-toggle>
+              <mat-datepicker #pickermha></mat-datepicker>
+            </mat-form-field>
+          </div><br>
+
+          <!-- Certificate Number -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Certificate Number</mat-label>
+              <input matInput placeholder="Enter Certificate Number"
+                [(ngModel)]="rapapplicantdetails.rapapplicantsMHAclearance.mhaCertificateNumber"
+                name="certificateNumber" required>
+            </mat-form-field>
+          </div><br>
+          <hr>
+        </section>
+        <!-- Section 4: MEA Clearance Certificate -->
+        <section class="meaClearance" *ngIf="rapapplicantdetails.passportDetails.passportType === 'official'">
+          <h2 style="color: #007bff; font-weight: bold;">MEA Clearance Certificate</h2><br>
+
+          <!-- MEA Certificate -->
+          <h2 style="color: #007bff; font-size: 20px;">Upload MEA Clearance Certificate</h2><br>
+          <div>
+            <input type="file" (change)="onMEAFileChange($event)" accept="image/*" required>
+            <img *ngIf="rapapplicantdetails.rapapplicantsMEAclearance.meaClearanceCertificate"
+              [src]="rapapplicantdetails.rapapplicantsMEAclearance.meaClearanceCertificate" width="100" height="100"
+              alt="MEA Clearance certificate">
+          </div><br>
+
+          <!-- Certificate valid till -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Certificate Valid Till</mat-label>
+              <input matInput [matDatepicker]="pickermea"
+                [(ngModel)]="rapapplicantdetails.rapapplicantsMEAclearance.meaCertificateValidTill"
+                name="meacertificateValidTill" required>
+              <mat-datepicker-toggle matIconSuffix [for]="pickermea"></mat-datepicker-toggle>
+              <mat-datepicker #pickermea></mat-datepicker>
+            </mat-form-field>
+          </div><br>
+
+          <!-- Certificate Number -->
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="my-form-full-width">
+              <mat-label>Certificate Number</mat-label>
+              <input matInput placeholder="Enter Certificate Number"
+                [(ngModel)]="rapapplicantdetails.rapapplicantsMEAclearance.meaCertificateNumber"
+                name="certificateNumber" required>
+            </mat-form-field>
+          </div><br>
+        </section>
+        <!-- Stepper navigation buttons -->
+        <div class="button-row">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+
+
+
+
+
+    <!-- step 4  -->
+    
+    <mat-step>
+
+
+      <h3 style="color: #007bff; font-weight: bold; text-align: center;">Tourism Purpose</h3><br>
+
+
+      
+      <ng-template matStepLabel>Travel Information</ng-template>
+
+      <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+
+
+      <form>
+        
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Date of Entry</mat-label>
+            <input matInput [matDatepicker]="entryDatePicker" placeholder="Choose entry date">
+            <mat-datepicker-toggle matSuffix [for]="entryDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #entryDatePicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+      
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Date of Exit</mat-label>
+            <input matInput [matDatepicker]="exitDatePicker" placeholder="Choose exit date">
+            <mat-datepicker-toggle matSuffix [for]="exitDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #exitDatePicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+
+
+
+
+        <!-- choose options starts -->
+        <div>
+          <h3 style="color: #007bff; font-weight: bold;">Accommodation details</h3><br>
+        
+          <mat-form-field class="accommodation-field" appearance="fill" style="width: 300px;">
+            <mat-label>Choose Accommodation Details</mat-label>
+            <mat-select [(ngModel)]="selectVal" (selectionChange)="onDogSelect($event.value)">
+              <mat-option *ngFor="let dog of Accomodationdetails" [value]="dog">{{ dog === 'hotelDetails' ? 'Hotel Details' : 'Local Reference' }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p>{{ selectVal }}</p>
+        </div>
+      
+
+        <div *ngIf="showBlackForm">
+          <h3>Hotel Details </h3>
+        
+          <div class="form-row">
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Hotel Name</mat-label>
+                <input matInput placeholder="Enter hotel name">
+              </mat-form-field>
+            </div>
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Street/Locality</mat-label>
+                <input matInput placeholder="Enter street/locality">
+              </mat-form-field>
+            </div>
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Contact Number</mat-label>
+                <input matInput placeholder="Enter contact number">
+              </mat-form-field>
+            </div>
+          </div>
+        
+          <div class="form-row">
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Pin Code</mat-label>
+                <input matInput placeholder="Enter pin code">
+              </mat-form-field>
+            </div>
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>City/Town</mat-label>
+                <input matInput placeholder="Enter city/town">
+              </mat-form-field>
+            </div>
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>District</mat-label>
+                <input matInput placeholder="Enter district">
+              </mat-form-field>
+            </div>
+          </div>
+        
+          <div class="form-row">
+            <div class="form-column full-width">
+              <mat-form-field appearance="fill">
+                <mat-label>Email ID</mat-label>
+                <input matInput placeholder="Enter email ID">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        
+        
+
+
+<!-- Form for Local Reference -->
+<div *ngIf="showRedForm">
+  <h3>Local Reference Details</h3>
+
+  <div class="form-row">
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter name">
+      </mat-form-field>
+    </div>
+
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Contact Number</mat-label>
+        <input matInput placeholder="Enter contact number">
+      </mat-form-field>
+    </div>
+
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email ID</mat-label>
+        <input matInput placeholder="Enter email ID">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Street/Locality</mat-label>
+        <input matInput placeholder="Enter street/locality">
+      </mat-form-field>
+    </div>
+
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>City/Town</mat-label>
+        <input matInput placeholder="Enter city/town">
+      </mat-form-field>
+    </div>
+
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>District</mat-label>
+        <input matInput placeholder="Enter district">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-column full-width">
+      <mat-form-field appearance="fill">
+        <mat-label>Pin Code</mat-label>
+        <input matInput placeholder="Enter pin code">
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<hr>
+<!-- for Business -->
+
+<h3 style="color: #007bff; font-weight: bold; text-align: center;">Business Purpose</h3><br>
+<h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+
+<div class="travel-info">
+  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+    <!-- Date of Entry -->
+    <div fxFlex="50">
+      <mat-form-field appearance="fill" >
+        <mat-label>Date of Entry</mat-label>
+        <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+        <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+        <mat-datepicker #entryPicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <!-- Date of Exit -->
+    <div fxFlex="50">
+      <mat-form-field appearance="fill" >
+        <mat-label>Date of Exit</mat-label>
+        <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+        <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+        <mat-datepicker #exitPicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<h3>Business Details</h3>
+<div>
+  <div class="form-row">
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Name of Organisation</mat-label>
+        <input matInput placeholder="Enter organisation name">
+      </mat-form-field>
+    </div>
+
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Organisation Contact Number</mat-label>
+        <input matInput placeholder="Enter organisation contact number">
+      </mat-form-field>
+    </div>
+
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Organisation Email ID</mat-label>
+        <input matInput placeholder="Enter organisation email ID">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Contact Person of Organisation</mat-label>
+        <input matInput placeholder="Enter contact person name">
+      </mat-form-field>
+    </div>
+
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Contact Number</mat-label>
+        <input matInput placeholder="Enter contact number">
+      </mat-form-field>
+    </div>
+
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Street/Locality</mat-label>
+        <input matInput placeholder="Enter street/locality">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Pin Code</mat-label>
+        <input matInput placeholder="Enter pin code">
+      </mat-form-field>
+    </div>
+
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>City/Town</mat-label>
+        <input matInput placeholder="Enter city/town">
+      </mat-form-field>
+    </div>
+
+    <div class="form-column">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>District</mat-label>
+        <input matInput placeholder="Enter district">
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+      </form>
+      <div class="button-row">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <!--  Completion -->
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You have completed the form.</p>
+
+      <div class="button-row">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="displayData()">Done</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

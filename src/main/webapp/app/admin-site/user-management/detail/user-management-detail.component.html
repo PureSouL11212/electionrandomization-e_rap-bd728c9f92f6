@@ -1,0 +1,172 @@
+<div class="container-fluid">
+  <mat-card>
+    <mat-card-header class="page-card-header">
+      <div class="icon-header ml-2"><i class="icofont icofont-dashboard-web float-left"></i></div>
+      <span class="page-title">User [<strong>{{ user()!.login }} </strong>]</span>
+    </mat-card-header>
+    <mat-card-content class="page-card-content">
+      <div class="d-flex justify-content-center">
+        <div class="col-6">
+          @if (user(); as userRef) {
+          <!--  <div> -->
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3">
+              <div class="fs-tags"><span jhiTranslate="userManagement.login">Login</span></div>
+            </div>
+
+            <div class="col-xl-9 col-lg-9 col-md-9">
+
+              <div class="fs-data"><span>{{ userRef.login }}
+                  @if (userRef.activated) {
+                  <span class="badge bg-success" jhiTranslate="userManagement.activated">Activated</span>
+                  } @else {
+                  <span class="badge bg-danger" jhiTranslate="userManagement.deactivated">Deactivated</span>
+                  }</span>
+              </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3">
+              <div class="fs-tags"><span jhiTranslate="userManagement.firstName">First Name</span></div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9">
+              <div class="fs-data">{{ userRef.firstName }} </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3">
+              <div class="fs-tags"><span jhiTranslate="userManagement.lastName">First Name</span></div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9">
+              <div class="fs-data">{{ userRef.lastName }} </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3">
+              <div class="fs-tags"><span jhiTranslate="userManagement.email">email</span></div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9">
+              <div class="fs-data">{{ userRef.email }} </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3">
+              <div class="fs-tags"><span jhiTranslate="userManagement.langKey">Language</span></div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9">
+              <div class="fs-data">{{ userRef.langKey }} </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3">
+              <div class="fs-tags"><span jhiTranslate="userManagement.createdDate">createdDate</span></div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9">
+              <div class="fs-data">{{ userRef.createdDate | date: 'dd/MM/yy HH:mm' }} </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3">
+              <div class="fs-tags"><span jhiTranslate="userManagement.createdBy">Created By</span></div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9">
+              <div class="fs-data">{{ userRef.createdBy }} </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3">
+              <div class="fs-tags"><span jhiTranslate="userManagement.lastModifiedDate">Modified Date</span></div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9">
+              <div class="fs-data">{{ userRef.lastModifiedDate | date: 'dd/MM/yy HH:mm' }} </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3">
+              <div class="fs-tags"><span jhiTranslate="userManagement.lastModifiedBy">Modified By</span></div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9">
+              <div class="fs-data">{{ userRef.lastModifiedBy }} </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3">
+              <div class="fs-tags"><span jhiTranslate="userManagement.profiles">Profile</span></div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9">
+              <div class="fs-data">
+                @for (authority of userRef.authorities; track $index) {
+                {{ authority }}
+                }
+              </div>
+            </div></div>
+            <mat-divider></mat-divider>
+
+           <!--  <dl class="row-md jh-entity-details">
+              <dt class="fs-tags"><span jhiTranslate="userManagement.login">Login</span></dt>
+              <dd>
+                <span>{{ userRef.login }}</span>
+                @if (userRef.activated) {
+                <span class="badge bg-success" jhiTranslate="userManagement.activated">Activated</span>
+                } @else {
+                <span class="badge bg-danger" jhiTranslate="userManagement.deactivated">Deactivated</span>
+                }
+              </dd>
+
+              <dt><span jhiTranslate="userManagement.firstName">First name</span></dt>
+              <dd>{{ userRef.firstName }}</dd>
+
+              <dt><span jhiTranslate="userManagement.lastName">Last name</span></dt>
+              <dd>{{ userRef.lastName }}</dd>
+
+              <dt><span jhiTranslate="userManagement.email">Email</span></dt>
+              <dd>{{ userRef.email }}</dd>
+
+              <dt><span jhiTranslate="userManagement.langKey">Language</span></dt>
+              <dd>{{ userRef.langKey }}</dd>
+
+              <dt><span jhiTranslate="userManagement.createdBy">Created by</span></dt>
+              <dd>{{ userRef.createdBy }}</dd>
+
+              <dt><span jhiTranslate="userManagement.createdDate">Created date</span></dt>
+              <dd>{{ userRef.createdDate | date: 'dd/MM/yy HH:mm' }}</dd>
+
+              <dt><span jhiTranslate="userManagement.lastModifiedBy">Modified by</span></dt>
+              <dd>{{ userRef.lastModifiedBy }}</dd>
+
+              <dt><span jhiTranslate="userManagement.lastModifiedDate">Modified date</span></dt>
+              <dd>{{ userRef.lastModifiedDate | date: 'dd/MM/yy HH:mm' }}</dd>
+
+              <dt><span jhiTranslate="userManagement.profiles">Profiles</span></dt>
+              <dd>
+                <ul class="list-unstyled">
+                  @for (authority of userRef.authorities; track $index) {
+                  <li>
+                    <span class="badge bg-info">{{ authority }}</span>
+                  </li>
+                  }
+                </ul>
+              </dd>
+            </dl> -->
+            <div class="row mt-5">
+              <div class="col-xl-3 col-lg-3 col-md-3">
+            <button mat-raised-button type="submit" routerLink="../../" color="accent">
+              <fa-icon icon="arrow-left"></fa-icon><span jhiTranslate="entity.action.back">Back</span>
+            </button></div>
+             </div>
+            }
+          </div>
+        </div>
+    </mat-card-content>
+  </mat-card>
+</div>

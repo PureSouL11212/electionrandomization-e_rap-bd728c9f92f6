@@ -1,0 +1,174 @@
+<div>
+    <div class="row">
+        <div class="col-md-4">
+            <span class="hipster img-fluid rounded"></span>
+        </div>
+
+
+
+
+
+        <br>
+        <div class="container mt-4" style="max-width: 900; margin: auto;">
+            <form class="row g-3"
+                style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                <div class="col-12">
+                    <h2 style="color: #007bff; font-weight: bold; ">Personal Information</h2>
+                    <hr>
+                </div>
+
+                <div class="col-12 mt-4">
+                    <h2 style="color: #007bff; font-size: 25px; ">Upload Your Photograph</h2>
+
+                </div>
+
+
+
+
+
+                <!-- Photo Upload -->
+                <div class="col-md-6">
+                    <label for="photo" class="form-label">Upload Photo</label>
+                    <input type="file" id="photo" class="form-control" accept="image/*" onchange="previewImage(event)"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- Image Preview -->
+                <div class="col-md-6 text-center">
+                    <label class="form-label">Preview</label>
+                    <div style="border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+                        <img id="photoPreview" src="#" alt="Image Preview"
+                            style="max-width: 100%; height: auto; display: none;" />
+                    </div>
+                </div>
+
+                <script>
+                    function previewImage(event) {
+                        var reader = new FileReader();
+                        reader.onload = function () {
+                            var output = document.getElementById('photoPreview');
+                            output.src = reader.result;
+                            output.style.display = 'block';
+                        }
+                        reader.readAsDataURL(event.target.files[0]);
+                    }
+                </script>
+
+
+                <hr>
+
+
+
+
+                <!-- First Name -->
+                <div class="col-md-4">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="Enter first name"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- Middle Name -->
+                <div class="col-md-4">
+                    <label for="middleName" class="form-label">Middle Name</label>
+                    <input type="text" id="middleName" class="form-control" placeholder="Enter middle name"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- Last Name -->
+                <div class="col-md-4">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" id="lastName" class="form-control" placeholder="Enter last name"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- Gender -->
+                <div class="col-md-4">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select id="gender" class="form-select" style="border-radius: 5px;">
+                        <option value="">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="col-md-4">
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="date" id="dob" class="form-control" style="border-radius: 5px;" />
+                </div>
+
+                <!-- Father's Name -->
+                <div class="col-md-4">
+                    <label for="fathersName" class="form-label">Father's Name</label>
+                    <input type="text" id="fathersName" class="form-control" placeholder="Enter father's name"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Email ID</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter email address"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- Contact Number -->
+                <div class="col-md-4">
+                    <label for="contactNumber" class="form-label">Contact Number</label>
+                    <input type="text" id="contactNumber" class="form-control" placeholder="Enter contact number"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- Identification Mark -->
+                <div class="col-md-4">
+                    <label for="identificationMark" class="form-label">Identification Mark</label>
+                    <input type="text" id="identificationMark" class="form-control"
+                        placeholder="Enter identification mark" style="border-radius: 5px;" />
+                </div>
+
+                <div class="col-12 mt-4">
+                    <h2 style="color: #007bff; font-weight: bold; ">Residential Address</h2>
+                    <hr>
+                </div>
+
+                <!-- House Number -->
+                <div class="col-md-4">
+                    <label for="houseNo" class="form-label">House Number</label>
+                    <input type="text" id="houseNo" class="form-control" placeholder="Enter house number"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- Street/Locality -->
+                <div class="col-md-4">
+                    <label for="street" class="form-label">Street/Locality</label>
+                    <input type="text" id="street" class="form-control" placeholder="Enter street/locality"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- Pincode/Zipcode -->
+                <div class="col-md-4">
+                    <label for="pincode" class="form-label">Pincode/Zipcode</label>
+                    <input type="text" id="pincode" class="form-control" placeholder="Enter pincode/zipcode"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- State -->
+                <div class="col-md-4">
+                    <label for="state" class="form-label">State</label>
+                    <input type="text" id="state" class="form-control" placeholder="Enter state"
+                        style="border-radius: 5px;" />
+                </div>
+
+                <!-- Next Button -->
+                <div class="col-12 mt-4 text-center">
+                    <button type="submit" class="btn btn-primary"
+                        style="padding: 10px 30px; font-size: 18px; border-radius: 5px;">Next</button>
+                </div>
+            </form>
+        </div>
+        <br>
+        <br>
+
+    </div>
+</div>
+</div>

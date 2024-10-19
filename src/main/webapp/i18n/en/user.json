@@ -1,0 +1,13 @@
+{
+    "user": {
+        "home": {
+            "title": "Users"  
+        },
+        "dashboard":{
+            "all":"All Applications",
+            "pending":"Pending Applications",
+            "approved":"Approved Applications",
+            "rejected":"Rejected Applications"
+        }
+    }
+}

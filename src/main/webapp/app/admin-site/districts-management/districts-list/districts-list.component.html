@@ -1,0 +1,98 @@
+<p>districts-list works!</p>
+<div class="container-fluid">
+    <mat-card>
+      <mat-card-header class="page-card-header">
+        <div class="icon-header ml-2">
+          <i class="icofont icofont-dashboard-web float-left"></i>
+        </div>
+        <span class="page-title">Districts</span>
+      </mat-card-header>
+      <mat-card-content class="page-card-content">
+        <div class="d-flex justify-content-end">
+          <button mat-raised-button class="me-2" color="accent" [disabled]="isLoading()">
+            <fa-icon icon="sync" [animation]="isLoading() ? 'spin' : undefined"></fa-icon>
+            Refresh list
+          </button>
+          <button mat-raised-button class="me-2" color="primary" [routerLink]="['./new']">
+            <fa-icon icon="plus"></fa-icon> Create a new District
+          </button>
+        </div>
+  
+        <div class="table-responsive mt-3" *ngIf="!isLoading(); else loadingTemplate">
+          <table mat-table [dataSource]="districts" class="mat-elevation-z8">
+            <!-- District Name Column -->
+            <ng-container matColumnDef="districtName">
+              <th mat-header-cell *matHeaderCellDef>District Name</th>
+              <td mat-cell *matCellDef="let district">{{ district.District }}</td>
+            </ng-container>
+  
+            <!-- District Code Column -->
+            <ng-container matColumnDef="districtCode">
+              <th mat-header-cell *matHeaderCellDef>District Code</th>
+              <td mat-cell *matCellDef="let district">{{ district.DistrictCode }}</td>
+            </ng-container>
+  
+            <!-- State Name Column -->
+            <ng-container matColumnDef="stateName">
+              <th mat-header-cell *matHeaderCellDef>State Name</th>
+              <td mat-cell *matCellDef="let district">{{ district.stateName }}</td>
+            </ng-container>
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Active </th>
+              <td mat-cell *matCellDef="let element">
+                <mat-slide-toggle [checked]="true" 
+                (change)="onToggleChange($event, element)">
+                </mat-slide-toggle>
+              </td>
+            </ng-container>
+  
+            <!-- Actions Column -->
+            <!-- <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef>Actions</th>
+              <td mat-cell *matCellDef="let district">
+                <div class="btn-group">
+                  <button mat-icon-button color="primary" matTooltip="View">
+                    <fa-icon icon="eye"></fa-icon>
+                  </button>
+  
+                  <button mat-icon-button color="accent" matTooltip="Edit">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                  </button>
+  
+                  <button mat-icon-button color="warn" matTooltip="Delete">
+                    <fa-icon icon="times"></fa-icon>
+                  </button>
+                </div>
+              </td>
+            </ng-container> -->
+           
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+  
+        <!-- Loading spinner template -->
+        <ng-template #loadingTemplate>
+          <div class="d-flex justify-content-center mt-5">
+            
+          </div>
+        </ng-template>
+  
+        <!-- Pagination -->
+        <div *ngIf="totalItems() > itemsPerPage">
+          <div class="d-flex justify-content-center">
+            <jhi-item-count
+              [params]="{ page: page, totalItems: totalItems(), itemsPerPage: itemsPerPage }">
+            </jhi-item-count>
+          </div>
+  
+          <div class="d-flex justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems()" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5"
+              [rotate]="true" [boundaryLinks]="true" ></ngb-pagination>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

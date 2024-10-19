@@ -1,0 +1,31 @@
+<div class="col-12" *ngIf="capLoaded">
+<div class="row mt-3 mb-3">
+  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <mat-form-field class="my-form-full-width" appearance="outline">
+      <mat-label>{{ 'global.form.captcha.label' | translate }}</mat-label>
+      <input
+        matInput
+        autocomplete="off"
+        name="captcha"
+        id="captcha"
+        placeholder="{{ 'global.form.captcha.placeholder' | translate }}"
+        [(ngModel)]="key"
+        (ngModelChange)="returnCaptcha()"
+      />
+    </mat-form-field>
+  </div>
+  <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+    <img style="height: 65px" [src]="_sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,' + cap.key)" />
+  </div>
+  <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 p-0 text-left ml-0 mt-2">
+    <a>
+      <img src="../../../content/images/refresh.png" (click)="refreshCaptcha()" style="max-height: 50px; background: none" />
+    </a>
+    <!-- <a type="button"
+                    class="btn btn-primary mt-1"
+                    (click)="refreshCaptcha()">
+                <mat-icon>refresh</mat-icon>
+    </a> -->
+  </div>
+</div>
+</div>
