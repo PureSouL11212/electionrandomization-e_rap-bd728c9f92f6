@@ -588,140 +588,7 @@
 
 
         <!-- choose options starts -->
-        <div>
-          <h3 style="color: #007bff; font-weight: bold;">Accommodation details</h3><br>
-        
-          <mat-form-field class="accommodation-field" appearance="fill" style="width: 300px;">
-            <mat-label>Choose Accommodation Details</mat-label>
-            <mat-select [(ngModel)]="selectVal" (selectionChange)="onDogSelect($event.value)">
-              <mat-option *ngFor="let dog of Accomodationdetails" [value]="dog">{{ dog === 'hotelDetails' ? 'Hotel Details' : 'Local Reference' }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <p>{{ selectVal }}</p>
-        </div>
       
-
-        <div *ngIf="showBlackForm">
-          <h3>Hotel Details </h3>
-        
-          <div class="form-row">
-            <div class="form-column">
-              <mat-form-field appearance="fill" class="full-width">
-                <mat-label>Hotel Name</mat-label>
-                <input matInput placeholder="Enter hotel name">
-              </mat-form-field>
-            </div>
-        
-            <div class="form-column">
-              <mat-form-field appearance="fill" class="full-width">
-                <mat-label>Street/Locality</mat-label>
-                <input matInput placeholder="Enter street/locality">
-              </mat-form-field>
-            </div>
-        
-            <div class="form-column">
-              <mat-form-field appearance="fill" class="full-width">
-                <mat-label>Contact Number</mat-label>
-                <input matInput placeholder="Enter contact number">
-              </mat-form-field>
-            </div>
-          </div>
-        
-          <div class="form-row">
-            <div class="form-column">
-              <mat-form-field appearance="fill" class="full-width">
-                <mat-label>Pin Code</mat-label>
-                <input matInput placeholder="Enter pin code">
-              </mat-form-field>
-            </div>
-        
-            <div class="form-column">
-              <mat-form-field appearance="fill" class="full-width">
-                <mat-label>City/Town</mat-label>
-                <input matInput placeholder="Enter city/town">
-              </mat-form-field>
-            </div>
-        
-            <div class="form-column">
-              <mat-form-field appearance="fill" class="full-width">
-                <mat-label>District</mat-label>
-                <input matInput placeholder="Enter district">
-              </mat-form-field>
-            </div>
-          </div>
-        
-          <div class="form-row">
-            <div class="form-column full-width">
-              <mat-form-field appearance="fill">
-                <mat-label>Email ID</mat-label>
-                <input matInput placeholder="Enter email ID">
-              </mat-form-field>
-            </div>
-          </div>
-        </div>
-        
-        
-
-
-<!-- Form for Local Reference -->
-<div *ngIf="showRedForm">
-  <h3>Local Reference Details</h3>
-
-  <div class="form-row">
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Enter name">
-      </mat-form-field>
-    </div>
-
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Contact Number</mat-label>
-        <input matInput placeholder="Enter contact number">
-      </mat-form-field>
-    </div>
-
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Email ID</mat-label>
-        <input matInput placeholder="Enter email ID">
-      </mat-form-field>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Street/Locality</mat-label>
-        <input matInput placeholder="Enter street/locality">
-      </mat-form-field>
-    </div>
-
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>City/Town</mat-label>
-        <input matInput placeholder="Enter city/town">
-      </mat-form-field>
-    </div>
-
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>District</mat-label>
-        <input matInput placeholder="Enter district">
-      </mat-form-field>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-column full-width">
-      <mat-form-field appearance="fill">
-        <mat-label>Pin Code</mat-label>
-        <input matInput placeholder="Enter pin code">
-      </mat-form-field>
-    </div>
-  </div>
-</div>
 <hr>
 <!-- for Business -->
 
@@ -751,99 +618,1020 @@
     </div>
   </div>
 </div>
-<h3>Business Details</h3>
-<div>
-  <div class="form-row">
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Name of Organisation</mat-label>
-        <input matInput placeholder="Enter organisation name">
+
+
+
+<!-- institute details -->
+
+<hr>
+
+
+<h3 style="color: #007bff; font-weight: bold; text-align: center;">Educational Purpose</h3><br>
+<h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+
+<div class="travel-info">
+  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+    <!-- Date of Entry -->
+    <div fxFlex="50">
+      <mat-form-field appearance="fill" >
+        <mat-label>Date of Entry</mat-label>
+        <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+        <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+        <mat-datepicker #entryPicker></mat-datepicker>
       </mat-form-field>
     </div>
 
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Organisation Contact Number</mat-label>
-        <input matInput placeholder="Enter organisation contact number">
-      </mat-form-field>
-    </div>
-
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Organisation Email ID</mat-label>
-        <input matInput placeholder="Enter organisation email ID">
-      </mat-form-field>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Contact Person of Organisation</mat-label>
-        <input matInput placeholder="Enter contact person name">
-      </mat-form-field>
-    </div>
-
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Contact Number</mat-label>
-        <input matInput placeholder="Enter contact number">
-      </mat-form-field>
-    </div>
-
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Street/Locality</mat-label>
-        <input matInput placeholder="Enter street/locality">
-      </mat-form-field>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Pin Code</mat-label>
-        <input matInput placeholder="Enter pin code">
-      </mat-form-field>
-    </div>
-
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>City/Town</mat-label>
-        <input matInput placeholder="Enter city/town">
-      </mat-form-field>
-    </div>
-
-    <div class="form-column">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>District</mat-label>
-        <input matInput placeholder="Enter district">
+    <!-- Date of Exit -->
+    <div fxFlex="50">
+      <mat-form-field appearance="fill" >
+        <mat-label>Date of Exit</mat-label>
+        <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+        <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+        <mat-datepicker #exitPicker></mat-datepicker>
       </mat-form-field>
     </div>
   </div>
 </div>
 
 
+<!-- Sports Purpose -->
 
+<h3 style="color: #007bff; font-weight: bold; text-align: center;">Sport Purpose</h3><br>
+<h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+<div class="travel-info">
+  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+    <!-- Date of Entry -->
+    <div fxFlex="50">
+      <mat-form-field appearance="fill" >
+        <mat-label>Date of Entry</mat-label>
+        <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+        <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+        <mat-datepicker #entryPicker></mat-datepicker>
+      </mat-form-field>
+    </div>
 
+    <!-- Date of Exit -->
+    <div fxFlex="50">
+      <mat-form-field appearance="fill" >
+        <mat-label>Date of Exit</mat-label>
+        <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+        <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+        <mat-datepicker #exitPicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<hr>
+<!-- Mountaineering Purpose -->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Mountaineering Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>
 
+<hr>
+<!-- Official Purpose -->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Official Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Film Shooting Purpose -->
 
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Film-Shooting Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Employment Purpose -->
 
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Employment Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
       </form>
       <div class="button-row">
         <button mat-button matStepperPrevious>Back</button>
+        
         <button mat-button matStepperNext>Next</button>
       </div>
     </mat-step>
 
+    <mat-step>
+      <ng-template matStepLabel>Purpose Feild</ng-template>
+
+
+      <!-- Tourism Purpose feilds-->
+      <div>
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Tourism Purpose</h3><br>
+        <div>
+                  <h3 style="color: #007bff; font-weight: bold;">Accommodation details</h3><br>
+               
+                  <mat-form-field class="accommodation-field" appearance="fill" style="width: 300px;">
+                    <mat-label>Choose Accommodation Details</mat-label>
+                    <mat-select [(ngModel)]="selectVal" (selectionChange)="onDogSelect($event.value)">
+                      <mat-option *ngFor="let dog of Accomodationdetails" [value]="dog">{{ dog === 'hotelDetails' ? 'Hotel Details' : 'Local Reference' }}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <!-- <p>{{ selectVal }}</p> -->
+                </div>
+        
+                <div *ngIf="showBlackForm">
+                  <h3>Hotel Details </h3>
+               
+                  <div class="form-row">
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Hotel Name</mat-label>
+                        <input matInput placeholder="Enter hotel name">
+                      </mat-form-field>
+                    </div>
+               
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Street/Locality</mat-label>
+                        <input matInput placeholder="Enter street/locality">
+                      </mat-form-field>
+                    </div>
+               
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Contact Number</mat-label>
+                        <input matInput placeholder="Enter contact number">
+                      </mat-form-field>
+                    </div>
+                  </div>
+               
+                  <div class="form-row">
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Pin Code</mat-label>
+                        <input matInput placeholder="Enter pin code">
+                      </mat-form-field>
+                    </div>
+               
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>City/Town</mat-label>
+                        <input matInput placeholder="Enter city/town">
+                      </mat-form-field>
+                    </div>
+               
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>District</mat-label>
+                        <input matInput placeholder="Enter district">
+                      </mat-form-field>
+                    </div>
+                  </div>
+               
+                  <div class="form-row">
+                    <div class="form-column full-width">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Email ID</mat-label>
+                        <input matInput placeholder="Enter email ID">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+        
+        <!-- Form for Local Reference -->
+        <div *ngIf="showRedForm">
+          <h3>Local Reference Details</h3>
+        
+        
+          <div class="form-row">
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter name">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Contact Number</mat-label>
+                <input matInput placeholder="Enter contact number">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Email ID</mat-label>
+                <input matInput placeholder="Enter email ID">
+              </mat-form-field>
+            </div>
+          </div>
+        
+        
+          <div class="form-row">
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Street/Locality</mat-label>
+                <input matInput placeholder="Enter street/locality">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>City/Town</mat-label>
+                <input matInput placeholder="Enter city/town">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>District</mat-label>
+                <input matInput placeholder="Enter district">
+              </mat-form-field>
+            </div>
+          </div>
+        
+        
+          <div class="form-row">
+            <div class="form-column full-width">
+              <mat-form-field appearance="fill">
+                <mat-label>Pin Code</mat-label>
+                <input matInput placeholder="Enter pin code">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+</div>
+        <hr>
+         <!-- Business Purpose feilds-->
+      <div>
+        <h3 style="color: #007bff; font-weight: bold; text-align: center;">Business Purpose</h3><br>
+
+        <h3>Business Details</h3>
+        <div>
+          <div class="form-row">
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Name of Organisation</mat-label>
+                <input matInput placeholder="Enter organisation name">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Organisation Contact Number</mat-label>
+                <input matInput placeholder="Enter organisation contact number">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Organisation Email ID</mat-label>
+                <input matInput placeholder="Enter organisation email ID">
+              </mat-form-field>
+            </div>
+          </div>
+        
+        
+          <div class="form-row">
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Contact Person of Organisation</mat-label>
+                <input matInput placeholder="Enter contact person name">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Contact Number</mat-label>
+                <input matInput placeholder="Enter Your contact number">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Street/Locality</mat-label>
+                <input matInput placeholder="Enter street/locality">
+              </mat-form-field>
+            </div>
+          </div>
+        
+        
+          <div class="form-row">
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Pin Code</mat-label>
+                <input matInput placeholder="Enter pin code">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>City/Town</mat-label>
+                <input matInput placeholder="Enter city/town">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>District</mat-label>
+                <input matInput placeholder="Enter district">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+      <hr>
+         <!-- Educational Purpose feilds-->
+          <div>
+        <h3 style="color: #007bff; font-weight: bold; text-align: center;">Educational Purpose</h3><br>
+        <h3>Institute Details</h3>
+        <div>
+          <div class="form-row">
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Name of Institute</mat-label>
+                <input matInput placeholder="Enter organisation name">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Institute Contact Number</mat-label>
+                <input matInput placeholder="Enter Institute contact number">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Institute Email ID</mat-label>
+                <input matInput placeholder="Enter Institute email ID">
+              </mat-form-field>
+            </div>
+          </div>
+        
+        
+          <div class="form-row">
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Contact Person of Institute</mat-label>
+                <input matInput placeholder="Enter contact person name">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Contact Number</mat-label>
+                <input matInput placeholder="Enter Your contact number">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Street/Locality</mat-label>
+                <input matInput placeholder="Enter street/locality">
+              </mat-form-field>
+            </div>
+          </div>
+        
+        
+          <div class="form-row">
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Pin Code</mat-label>
+                <input matInput placeholder="Enter pin code">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>City/Town</mat-label>
+                <input matInput placeholder="Enter city/town">
+              </mat-form-field>
+            </div>
+        
+        
+            <div class="form-column">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>District</mat-label>
+                <input matInput placeholder="Enter district">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        
+          </div>
+          <hr>
+         <!-- Sports Purpose feilds-->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Sports Purpose</h3><br>
+
+  <h3>Sports Organisation Details</h3>
+  <div>
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Name of Organisation</mat-label>
+          <input matInput placeholder="Enter organisation name">
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Organisation Contact Number</mat-label>
+          <input matInput placeholder="Enter Organisation contact number">
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Organisation Email ID</mat-label>
+          <input matInput placeholder="Enter Organisation email ID">
+        </mat-form-field>
+      </div>
+    </div>
+  
+  
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Contact Person of Organisation</mat-label>
+          <input matInput placeholder="Enter Organisation contact person">
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Contact Number</mat-label>
+          <input matInput placeholder="Enter Your contact number">
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Street/Locality</mat-label>
+          <input matInput placeholder="Enter street/locality">
+        </mat-form-field>
+      </div>
+    </div>
+  
+  
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Pin Code</mat-label>
+          <input matInput placeholder="Enter pin code">
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>City/Town</mat-label>
+          <input matInput placeholder="Enter city/town">
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>District</mat-label>
+          <input matInput placeholder="Enter district">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  
+</div><hr>
+         <!-- Mountaineering Purpose feilds-->
+         <div>
+          <h3 style="color: #007bff; font-weight: bold; text-align: center;">Mountaineering Purpose</h3><br>
+                <div>
+                          <h3 style="color: #007bff; font-weight: bold;">Accommodation details</h3><br>
+                       
+                          <mat-form-field class="accommodation-field" appearance="fill" style="width: 300px;">
+                            <mat-label>Choose Accommodation Details</mat-label>
+                            <mat-select [(ngModel)]="selectVal" (selectionChange)="onDogSelect($event.value)">
+                              <mat-option *ngFor="let dog of Accomodationdetails" [value]="dog">{{ dog === 'hotelDetails' ? 'Hotel Details' : 'Local Reference' }}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <!-- <p>{{ selectVal }}</p> -->
+                        </div>
+                
+                        <div *ngIf="showBlackForm">
+                          <h3>Hotel Details </h3>
+                       
+                          <div class="form-row">
+                            <div class="form-column">
+                              <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Hotel Name</mat-label>
+                                <input matInput placeholder="Enter hotel name">
+                              </mat-form-field>
+                            </div>
+                       
+                            <div class="form-column">
+                              <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Street/Locality</mat-label>
+                                <input matInput placeholder="Enter street/locality">
+                              </mat-form-field>
+                            </div>
+                       
+                            <div class="form-column">
+                              <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Contact Number</mat-label>
+                                <input matInput placeholder="Enter contact number">
+                              </mat-form-field>
+                            </div>
+                          </div>
+                       
+                          <div class="form-row">
+                            <div class="form-column">
+                              <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Pin Code</mat-label>
+                                <input matInput placeholder="Enter pin code">
+                              </mat-form-field>
+                            </div>
+                       
+                            <div class="form-column">
+                              <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>City/Town</mat-label>
+                                <input matInput placeholder="Enter city/town">
+                              </mat-form-field>
+                            </div>
+                       
+                            <div class="form-column">
+                              <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>District</mat-label>
+                                <input matInput placeholder="Enter district">
+                              </mat-form-field>
+                            </div>
+                          </div>
+                       
+                          <div class="form-row">
+                            <div class="form-column full-width">
+                              <mat-form-field appearance="fill">
+                                <mat-label>Email ID</mat-label>
+                                <input matInput placeholder="Enter email ID">
+                              </mat-form-field>
+                            </div>
+                          </div>
+                        </div>
+                
+                <!-- Form for Local Reference -->
+                <div *ngIf="showRedForm">
+                  <h3>Local Reference Details</h3>
+                
+                
+                  <div class="form-row">
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Enter name">
+                      </mat-form-field>
+                    </div>
+                
+                
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Contact Number</mat-label>
+                        <input matInput placeholder="Enter contact number">
+                      </mat-form-field>
+                    </div>
+                
+                
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Email ID</mat-label>
+                        <input matInput placeholder="Enter email ID">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                
+                
+                  <div class="form-row">
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Street/Locality</mat-label>
+                        <input matInput placeholder="Enter street/locality">
+                      </mat-form-field>
+                    </div>
+                
+                
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>City/Town</mat-label>
+                        <input matInput placeholder="Enter city/town">
+                      </mat-form-field>
+                    </div>
+                
+                
+                    <div class="form-column">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>District</mat-label>
+                        <input matInput placeholder="Enter district">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                
+                
+                  <div class="form-row">
+                    <div class="form-column full-width">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Pin Code</mat-label>
+                        <input matInput placeholder="Enter pin code">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+        </div>
+
+
+        <!-- Official purpose feilds-->
+        <div>
+          <h3 style="color: #007bff; font-weight: bold; text-align: center;">Official Purpose</h3><br>
+  
+          <h3>Organisation Details</h3>
+          <div>
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Name of Organisation</mat-label>
+                  <input matInput placeholder="Enter organisation name">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Organisation Contact Number</mat-label>
+                  <input matInput placeholder="Enter organisation contact number">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Organisation Email ID</mat-label>
+                  <input matInput placeholder="Enter organisation email ID">
+                </mat-form-field>
+              </div>
+            </div>
+          
+          
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Contact Person of Organisation</mat-label>
+                  <input matInput placeholder="Enter contact person name">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Contact Number</mat-label>
+                  <input matInput placeholder="Enter Your contact number">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Street/Locality</mat-label>
+                  <input matInput placeholder="Enter street/locality">
+                </mat-form-field>
+              </div>
+            </div>
+          
+          
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Pin Code</mat-label>
+                  <input matInput placeholder="Enter pin code">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>City/Town</mat-label>
+                  <input matInput placeholder="Enter city/town">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>District</mat-label>
+                  <input matInput placeholder="Enter district">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          
+  
+        </div>
+
+
+        <!-- Film-Shooting feilds-->
+        <div>
+          <h3 style="color: #007bff; font-weight: bold; text-align: center;">Film-Shooting Purpose</h3><br>
+  
+          <h3>Film-Shooting Production Details</h3>
+          <div>
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Name of Production Company</mat-label>
+                  <input matInput placeholder="Enter Production Company name">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Production Company Contact Number</mat-label>
+                  <input matInput placeholder="Enter Production Company contact number">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Production Company Email ID</mat-label>
+                  <input matInput placeholder="Enter Production Company Email ID">
+                </mat-form-field>
+              </div>
+            </div>
+          
+          
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Contact Person of Production </mat-label>
+                  <input matInput placeholder="Enter contact person name">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Contact Number</mat-label>
+                  <input matInput placeholder="Enter Your contact number">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Street/Locality</mat-label>
+                  <input matInput placeholder="Enter street/locality">
+                </mat-form-field>
+              </div>
+            </div>
+          
+          
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Pin Code</mat-label>
+                  <input matInput placeholder="Enter pin code">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>City/Town</mat-label>
+                  <input matInput placeholder="Enter city/town">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>District</mat-label>
+                  <input matInput placeholder="Enter district">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          
+  
+        </div>
+
+        <!-- Employment feilds-->
+        <div>
+          <h3 style="color: #007bff; font-weight: bold; text-align: center;">Employment Purpose</h3><br>
+  
+          <h3>Employment Details</h3>
+          <div>
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Employer's Name</mat-label>
+                  <input matInput placeholder="Enter Employer's Name">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Email ID</mat-label>
+                  <input matInput placeholder="Enter Employer's Email ">
+                </mat-form-field>
+              </div>
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>City/Town</mat-label>
+                  <input matInput placeholder="Enter city/town">
+                </mat-form-field>
+              </div>
+              
+             
+            </div>
+          
+          
+            <div class="form-row">
+              
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Contact Number</mat-label>
+                  <input matInput placeholder="Enter Your contact number">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Street/Locality</mat-label>
+                  <input matInput placeholder="Enter street/locality">
+                </mat-form-field>
+              </div>
+
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>District</mat-label>
+                  <input matInput placeholder="Enter district">
+                </mat-form-field>
+              </div>
+            </div>
+          
+          
+            <div class="form-row">
+              <div style="width: 32.5%;">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Pin Code</mat-label>
+                  <input matInput placeholder="Enter pin code">
+                </mat-form-field>
+              </div>
+          
+          
+              
+          
+          
+             
+            </div>
+            
+          </div>
+          
+  
+        </div>
+<div>
+
+</div>
+              <div class="button-row">
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+                
+              </div>
+      </div>
+
+
+     
+ 
+    </mat-step>
+
+
+
     <!--  Completion -->
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      <p>You have completed the form.</p>
 
+      <p>You have completed the form.</p>
       <div class="button-row">
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="displayData()">Done</button>

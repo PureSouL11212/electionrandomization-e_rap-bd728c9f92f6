@@ -1,9 +1,13 @@
-import { Component,OnInit  } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'app/material.module';
 import { RapApplicantDetails} from '../../models/rap-application.models';
+import { PurposesComponent } from '../purposes/purposes.component';
+
+import { RouterOutlet,RouterLink } from '@angular/router';
+import { Router  } from '@angular/router';
 
 @Component({
   selector: 'jhi-personal-details-form',
@@ -12,15 +16,16 @@ import { RapApplicantDetails} from '../../models/rap-application.models';
     MaterialModule,
     RouterModule,
     FormsModule,
-    
+    PurposesComponent,RouterOutlet,RouterLink
     
   ],
-  providers: [provideNativeDateAdapter()],
+  providers: [provideNativeDateAdapter(),Router],
   templateUrl: './personal-details-form.component.html',
   styleUrls: ['./personal-details-form.component.scss']
 })
 
 export class PersonalDetailsFormComponent {
+  
   rapapplicantdetails: RapApplicantDetails = new RapApplicantDetails();
   // Declare all properties before methods
   Accomodationdetails = ['hotelDetails', 'localReference'];
