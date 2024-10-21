@@ -6,7 +6,7 @@ import { MaterialModule } from 'app/material.module';
 import { RapApplicantDetails} from '../../models/rap-application.models';
 import { PurposesComponent } from '../purposes/purposes.component';
 import { RouterOutlet,RouterLink } from '@angular/router';
-import { Router  } from '@angular/router';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'jhi-personal-details-form',
@@ -23,17 +23,6 @@ import { Router  } from '@angular/router';
 })
 
 export class PersonalDetailsFormComponent {
-
-   // Adjust type as per your application's needs
- 
-
- 
-  // Public Method
- 
-
-
-
-
   rapapplicantdetails: RapApplicantDetails = new RapApplicantDetails();
   // Declare all properties before methods
   Accomodationdetails = ['hotelDetails', 'localReference'];
@@ -41,9 +30,6 @@ export class PersonalDetailsFormComponent {
   showBlackForm = false; // Changed to showHotelDetailsForm
   showRedForm = false; // Changed to showLocalReferenceForm
   isLinear = false; // Assuming you have this property
-
-
-
   treeOptions = ['nativeTree', 'ornamentalTree', 'fruitTree']; // Array of tree options
   selectedTree = ''; // Holds the currently selected tree option
   showNativeTreeForm = false; // Controls visibility of native tree form
@@ -55,10 +41,6 @@ export class PersonalDetailsFormComponent {
     this.showBlackForm = selected === 'hotelDetails'; 
     this.showRedForm = selected === 'localReference'; 
   }
-
-
-
-  
   onTreeSelect(selected: string): void {
     this.showNativeTreeForm = selected === 'nativeTree';
     this.showOrnamentalTreeForm = selected === 'ornamentalTree';
