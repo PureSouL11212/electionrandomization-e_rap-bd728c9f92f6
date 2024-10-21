@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'app/material.module';
 import { RapApplicantDetails} from '../../models/rap-application.models';
 import { PurposesComponent } from '../purposes/purposes.component';
-
 import { RouterOutlet,RouterLink } from '@angular/router';
 import { Router  } from '@angular/router';
 
@@ -36,13 +35,10 @@ export class PersonalDetailsFormComponent {
   
   // Method to handle the selection of a dog
   onDogSelect(selected: string): void {
-    this.showBlackForm = selected === 'hotelDetails'; // Adjusted condition
-    this.showRedForm = selected === 'localReference'; // Adjusted condition
+    this.showBlackForm = selected === 'hotelDetails'; 
+    this.showRedForm = selected === 'localReference'; 
   }
-  
-  
- 
-  copyResidentaladdress(): void {
+ copyResidentaladdress(): void {
     this.rapapplicantdetails.permanentAddress ={...this.rapapplicantdetails.residentialAddress}
   }
 

@@ -552,6 +552,7 @@
     
     <mat-step>
 
+<!-- Tourism Purpose -->
 
       <h3 style="color: #007bff; font-weight: bold; text-align: center;">Tourism Purpose</h3><br>
 
@@ -591,93 +592,89 @@
       
 <hr>
 <!-- for Business -->
-
-<h3 style="color: #007bff; font-weight: bold; text-align: center;">Business Purpose</h3><br>
-<h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
-
-<div class="travel-info">
-  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
-    <!-- Date of Entry -->
-    <div fxFlex="50">
-      <mat-form-field appearance="fill" >
-        <mat-label>Date of Entry</mat-label>
-        <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
-        <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
-        <mat-datepicker #entryPicker></mat-datepicker>
-      </mat-form-field>
-    </div>
-
-    <!-- Date of Exit -->
-    <div fxFlex="50">
-      <mat-form-field appearance="fill" >
-        <mat-label>Date of Exit</mat-label>
-        <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
-        <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
-        <mat-datepicker #exitPicker></mat-datepicker>
-      </mat-form-field>
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Business Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
     </div>
   </div>
 </div>
-
-
-
-<!-- institute details -->
-
 <hr>
-
-
-<h3 style="color: #007bff; font-weight: bold; text-align: center;">Educational Purpose</h3><br>
-<h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
-
-<div class="travel-info">
-  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
-    <!-- Date of Entry -->
-    <div fxFlex="50">
-      <mat-form-field appearance="fill" >
-        <mat-label>Date of Entry</mat-label>
-        <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
-        <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
-        <mat-datepicker #entryPicker></mat-datepicker>
-      </mat-form-field>
-    </div>
-
-    <!-- Date of Exit -->
-    <div fxFlex="50">
-      <mat-form-field appearance="fill" >
-        <mat-label>Date of Exit</mat-label>
-        <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
-        <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
-        <mat-datepicker #exitPicker></mat-datepicker>
-      </mat-form-field>
+<!-- institute details -->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Educational Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
     </div>
   </div>
-</div>
-
-
+</div><hr>
 <!-- Sports Purpose -->
-
-<h3 style="color: #007bff; font-weight: bold; text-align: center;">Sport Purpose</h3><br>
-<h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
-<div class="travel-info">
-  <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
-    <!-- Date of Entry -->
-    <div fxFlex="50">
-      <mat-form-field appearance="fill" >
-        <mat-label>Date of Entry</mat-label>
-        <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
-        <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
-        <mat-datepicker #entryPicker></mat-datepicker>
-      </mat-form-field>
-    </div>
-
-    <!-- Date of Exit -->
-    <div fxFlex="50">
-      <mat-form-field appearance="fill" >
-        <mat-label>Date of Exit</mat-label>
-        <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
-        <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
-        <mat-datepicker #exitPicker></mat-datepicker>
-      </mat-form-field>
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Sport Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
     </div>
   </div>
 </div>
@@ -710,11 +707,10 @@
     </div>
   </div>
 </div>
-
 <hr>
 <!-- Official Purpose -->
 <div>
-  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Official Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Official/Diplomat Purpose</h3><br>
   <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
   <div class="travel-info">
     <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
@@ -739,9 +735,8 @@
       </div>
     </div>
   </div>
-</div>
+</div><hr>
 <!-- Film Shooting Purpose -->
-
 <div>
   <h3 style="color: #007bff; font-weight: bold; text-align: center;">Film-Shooting Purpose</h3><br>
   <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
@@ -768,9 +763,8 @@
       </div>
     </div>
   </div>
-</div>
+</div><hr>
 <!-- Employment Purpose -->
-
 <div>
   <h3 style="color: #007bff; font-weight: bold; text-align: center;">Employment Purpose</h3><br>
   <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
@@ -797,11 +791,150 @@
       </div>
     </div>
   </div>
+</div><hr>
+<!-- Research Purpose -->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Research Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div><hr>
+<!-- Missionary Purpose -->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Missionary Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div><hr>
+<!-- Conference Purpose -->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Conference Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div><hr>
+<!-- Journalist Purpose -->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Journalist Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div><hr>
+
+<!-- Voluntary Purpose -->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Voluntary Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-
-      </form>
+</form>
       <div class="button-row">
         <button mat-button matStepperPrevious>Back</button>
         
@@ -1353,12 +1486,12 @@
                     </div>
                   </div>
                 </div>
-        </div>
+        </div><hr>
 
 
         <!-- Official purpose feilds-->
         <div>
-          <h3 style="color: #007bff; font-weight: bold; text-align: center;">Official Purpose</h3><br>
+          <h3 style="color: #007bff; font-weight: bold; text-align: center;">Official/Diplomat Purpose</h3><br>
   
           <h3>Organisation Details</h3>
           <div>
@@ -1441,10 +1574,10 @@
           </div>
           
   
-        </div>
+        </div><hr>
 
 
-        <!-- Film-Shooting feilds-->
+        <!-- Film-Shooting purpose feilds-->
         <div>
           <h3 style="color: #007bff; font-weight: bold; text-align: center;">Film-Shooting Purpose</h3><br>
   
@@ -1529,9 +1662,9 @@
           </div>
           
   
-        </div>
+        </div><hr>
 
-        <!-- Employment feilds-->
+        <!-- Employment purpose feilds-->
         <div>
           <h3 style="color: #007bff; font-weight: bold; text-align: center;">Employment Purpose</h3><br>
   
@@ -1609,10 +1742,439 @@
           </div>
           
   
-        </div>
-<div>
+        </div><hr>
+ <!-- Research  Purpose feilds-->
+ <div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Research Purpose</h3><br>
 
-</div>
+  <h3> Research Organisation Details</h3>
+  <div>
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Name of Research Institute/Orginsation</mat-label>
+          <input matInput placeholder="Enter Religious Site name">
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label> Contact Number Of Person From Organisation</mat-label>
+          <input matInput placeholder="Enter Contact Number Person from Organisation">
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Organisation Email ID</mat-label>
+          <input matInput placeholder="Enter Organisation Email ID">
+        </mat-form-field>
+      </div>
+    </div>
+  
+  
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Contact Number</mat-label>
+          <input matInput placeholder="Enter Contact Number">
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Street/Locality</mat-label>
+          <input matInput placeholder="Enter Street/Locality">
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>District</mat-label>
+          <input matInput placeholder="Enter District">
+        </mat-form-field>
+      </div>
+    </div>
+  
+  
+    <div class="form-row" >
+      <div >
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>City/Town</mat-label>
+          <input matInput placeholder="Enter City/Town">
+        </mat-form-field>
+      </div>
+      <div >
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Pin Code</mat-label>
+          <input matInput placeholder="Enter pin code">
+        </mat-form-field>
+      </div>
+  
+  
+      
+    </div>
+  </div>
+  
+
+</div><hr>
+         <!-- Missionary  Purpose feilds-->
+         <div>
+          <h3 style="color: #007bff; font-weight: bold; text-align: center;">Missionary Purpose</h3><br>
+  
+          <h3> Religious Site Details</h3>
+          <div>
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Name of Religious Site</mat-label>
+                  <input matInput placeholder="Enter Religious Site name">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label> Contact Number Person Of Religious Site</mat-label>
+                  <input matInput placeholder="Enter Contact Number Person Of Religious Site">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Contact Number</mat-label>
+                  <input matInput placeholder="Enter Your Contact Number">
+                </mat-form-field>
+              </div>
+            </div>
+          
+          
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Street/Locality</mat-label>
+                  <input matInput placeholder="Enter Steert/Locality">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>District</mat-label>
+                  <input matInput placeholder="Enter District">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>City/Town</mat-label>
+                  <input matInput placeholder="Enter City/Town">
+                </mat-form-field>
+              </div>
+            </div>
+          
+          
+            <div class="form-row">
+              <div   style="width: 32.5%;" >
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Pin Code</mat-label>
+                  <input matInput placeholder="Enter pin code">
+                </mat-form-field>
+              </div>
+          
+          
+              
+            </div>
+          </div>
+          
+  
+        </div><hr>
+         <!-- Conference  Purpose feilds-->
+
+        <div>
+          <h3 style="color: #007bff; font-weight: bold; text-align: center;">Conference Purpose</h3><br>
+  
+          <h3>Conference Details</h3>
+          <div>
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Institute Name</mat-label>
+                  <input matInput placeholder="Enter Institute Name">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Institute Contact Number</mat-label>
+                  <input matInput placeholder="Enter Institute Contact Number ">
+                </mat-form-field>
+              </div>
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Institute Email ID</mat-label>
+                  <input matInput placeholder="Enter Institute Email ID">
+                </mat-form-field>
+              </div>
+              
+             
+            </div>
+          
+          
+            <div class="form-row">
+              
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Contact Number Of Person From Institute</mat-label>
+                  <input matInput placeholder="Enter Contact Number Of Person From Institute">
+                </mat-form-field>
+              </div>
+          
+          
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Contact Number</mat-label>
+                  <input matInput placeholder="Enter Your Contact Number">
+                </mat-form-field>
+              </div>
+
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Street/Locality</mat-label>
+                  <input matInput placeholder="Enter Street/Locality">
+                </mat-form-field>
+              </div>
+            </div>
+          
+          
+            <div class="form-row">
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>City/Town</mat-label>
+                  <input matInput placeholder="Enter City/Town">
+                </mat-form-field>
+              </div>
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>District</mat-label>
+                  <input matInput placeholder="Enter District">
+                </mat-form-field>
+              </div>
+              <div class="form-column">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Pin Code</mat-label>
+                  <input matInput placeholder="Enter Pin COde">
+                </mat-form-field>
+              </div>
+          
+          
+              
+          
+          
+             
+            </div>
+            
+          </div>
+          
+  
+        </div><hr>
+   <!-- Journalist Purpose feilds-->
+
+   <div>
+    <h3 style="color: #007bff; font-weight: bold; text-align: center;">Journalist Purpose</h3><br>
+
+    <h3>Deatils Of Local Media House</h3>
+    <div>
+      <div class="form-row">
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Media House Name</mat-label>
+            <input matInput placeholder="Enter Media House Name">
+          </mat-form-field>
+        </div>
+    
+    
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Media House Contact Number</mat-label>
+            <input matInput placeholder="Enter Media House Contact Number">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Media House Email ID</mat-label>
+            <input matInput placeholder="Enter Media House Email ID">
+          </mat-form-field>
+        </div>
+        
+       
+      </div>
+    
+    
+      <div class="form-row">
+        
+    
+    
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Contact Number Of Person From Media House </mat-label>
+            <input matInput placeholder="Enter Contact Number Of Person From Media House ">
+          </mat-form-field>
+        </div>
+    
+    
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Contact Number</mat-label>
+            <input matInput placeholder="Enter Your Contact Number">
+          </mat-form-field>
+        </div>
+
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Street/Locality</mat-label>
+            <input matInput placeholder="Enter Street/Locality">
+          </mat-form-field>
+        </div>
+      </div>
+    
+    
+      <div class="form-row">
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>City/Town</mat-label>
+            <input matInput placeholder="Enter City/Town">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>District</mat-label>
+            <input matInput placeholder="Enter District">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Pin Code</mat-label>
+            <input matInput placeholder="Enter Pin COde">
+          </mat-form-field>
+        </div>
+    
+    
+        
+    
+    
+       
+      </div>
+      
+    </div>
+    
+
+  </div><hr>
+   <!-- Voluntary Purpose feilds-->
+
+   <div>
+    <h3 style="color: #007bff; font-weight: bold; text-align: center;">Voluntary Purpose</h3><br>
+
+    <h3>Voluntary Work Organisation Details</h3>
+    <div>
+      <div class="form-row">
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Organisation Name</mat-label>
+            <input matInput placeholder="Enter Organisation Name">
+          </mat-form-field>
+        </div>
+    
+    
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Organisation Contact Number</mat-label>
+            <input matInput placeholder="Enter Organisation Contact Number">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Organisation Email ID</mat-label>
+            <input matInput placeholder="Enter Organisation Email ID">
+          </mat-form-field>
+        </div>
+        
+       
+        
+      </div>
+    
+    
+      <div class="form-row">
+        
+    
+    
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Contact Number Of Person From Organisation </mat-label>
+            <input matInput placeholder="Enter Contact Number Of Person From Organisation ">
+          </mat-form-field>
+        </div>
+    
+    
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Role/Position For Volunteering</mat-label>
+            <input matInput placeholder="Enter Your Role/Position For Volunteering">
+          </mat-form-field>
+        </div>
+
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Contact Number</mat-label>
+            <input matInput placeholder="Enter Your Contact Number">
+          </mat-form-field>
+        </div>
+      </div>
+    
+    
+      <div class="form-row">
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Street/Locality</mat-label>
+            <input matInput placeholder="Enter Street/Locality">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>City/Town</mat-label>
+            <input matInput placeholder="Enter City/Town">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>District</mat-label>
+            <input matInput placeholder="Enter District">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div style="width: 32.5%;">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Pin COde </mat-label>
+            <input matInput placeholder="Enter Pin Code">
+          </mat-form-field>
+        </div>
+      </div>
+      
+    </div>
+    
+
+  </div><hr>
+
               <div class="button-row">
                 <button mat-button matStepperPrevious>Back</button>
                 <button mat-button matStepperNext>Next</button>
@@ -1624,8 +2186,6 @@
      
  
     </mat-step>
-
-
 
     <!--  Completion -->
     <mat-step>
