@@ -550,46 +550,39 @@
 
     <!-- step 4  -->
     
-    <mat-step>
-
+<mat-step>  
+<form>
 <!-- Tourism Purpose -->
-
-      <h3 style="color: #007bff; font-weight: bold; text-align: center;">Tourism Purpose</h3><br>
+<div>
+    <h3 style="color: #007bff; font-weight: bold; text-align: center;">Tourism Purpose</h3><br>
 
 
       
-      <ng-template matStepLabel>Travel Information</ng-template>
+    <ng-template matStepLabel>Travel Information</ng-template>
 
-      <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+    <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
 
-
-      <form>
-        
-        <div>
-          <mat-form-field appearance="fill">
-            <mat-label>Date of Entry</mat-label>
-            <input matInput [matDatepicker]="entryDatePicker" placeholder="Choose entry date">
-            <mat-datepicker-toggle matSuffix [for]="entryDatePicker"></mat-datepicker-toggle>
-            <mat-datepicker #entryDatePicker></mat-datepicker>
-          </mat-form-field>
-        </div>
 
       
-        <div>
-          <mat-form-field appearance="fill">
-            <mat-label>Date of Exit</mat-label>
-            <input matInput [matDatepicker]="exitDatePicker" placeholder="Choose exit date">
-            <mat-datepicker-toggle matSuffix [for]="exitDatePicker"></mat-datepicker-toggle>
-            <mat-datepicker #exitDatePicker></mat-datepicker>
-          </mat-form-field>
-        </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryDatePicker" placeholder="Choose entry date">
+          <mat-datepicker-toggle matSuffix [for]="entryDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryDatePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
 
-
-
-
-
-        <!-- choose options starts -->
-      
+    
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitDatePicker" placeholder="Choose exit date">
+          <mat-datepicker-toggle matSuffix [for]="exitDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitDatePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+</div>
 <hr>
 <!-- for Business -->
 <div>
@@ -904,7 +897,6 @@
     </div>
   </div>
 </div><hr>
-
 <!-- Voluntary Purpose -->
 <div>
   <h3 style="color: #007bff; font-weight: bold; text-align: center;">Voluntary Purpose</h3><br>
@@ -932,7 +924,66 @@
       </div>
     </div>
   </div>
+</div><hr>
+
+<!-- Visting-Relatives Purpose -->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Visting Relatives Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
+  <div class="travel-info">
+    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+      <!-- Date of Entry -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Entry</mat-label>
+          <input matInput [matDatepicker]="entryPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="entryPicker"></mat-datepicker-toggle>
+          <mat-datepicker #entryPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Date of Exit -->
+      <div fxFlex="50">
+        <mat-form-field appearance="fill" >
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="exitPicker" placeholder="Select date" required>
+          <mat-datepicker-toggle matSuffix [for]="exitPicker"></mat-datepicker-toggle>
+          <mat-datepicker #exitPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+<!-- dependent wife of husband of  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </form>
       <div class="button-row">
@@ -946,8 +997,8 @@
       <ng-template matStepLabel>Purpose Feild</ng-template>
 
 
-      <!-- Tourism Purpose feilds-->
-      <div>
+<!-- Tourism Purpose feilds-->
+<div>
 <div>
   <h3 style="color: #007bff; font-weight: bold; text-align: center;">Tourism Purpose</h3><br>
         <div>
@@ -1088,9 +1139,9 @@
           </div>
         </div>
 </div>
-        <hr>
-         <!-- Business Purpose feilds-->
-      <div>
+<hr>
+<!-- Business Purpose feilds-->
+<div>
         <h3 style="color: #007bff; font-weight: bold; text-align: center;">Business Purpose</h3><br>
 
         <h3>Business Details</h3>
@@ -1174,10 +1225,10 @@
         </div>
         
 
-      </div>
-      <hr>
-         <!-- Educational Purpose feilds-->
-          <div>
+</div>
+<hr>
+<!-- Educational Purpose feilds-->
+<div>
         <h3 style="color: #007bff; font-weight: bold; text-align: center;">Educational Purpose</h3><br>
         <h3>Institute Details</h3>
         <div>
@@ -1259,9 +1310,9 @@
           </div>
         </div>
         
-          </div>
-          <hr>
-         <!-- Sports Purpose feilds-->
+</div>
+<hr>
+<!-- Sports Purpose feilds-->
 <div>
   <h3 style="color: #007bff; font-weight: bold; text-align: center;">Sports Purpose</h3><br>
 
@@ -1346,8 +1397,8 @@
   </div>
   
 </div><hr>
-         <!-- Mountaineering Purpose feilds-->
-         <div>
+<!-- Mountaineering Purpose feilds-->
+<div>
           <h3 style="color: #007bff; font-weight: bold; text-align: center;">Mountaineering Purpose</h3><br>
                 <div>
                           <h3 style="color: #007bff; font-weight: bold;">Accommodation details</h3><br>
@@ -1486,11 +1537,9 @@
                     </div>
                   </div>
                 </div>
-        </div><hr>
-
-
-        <!-- Official purpose feilds-->
-        <div>
+</div><hr>
+<!-- Official purpose feilds-->
+<div>
           <h3 style="color: #007bff; font-weight: bold; text-align: center;">Official/Diplomat Purpose</h3><br>
   
           <h3>Organisation Details</h3>
@@ -1574,11 +1623,9 @@
           </div>
           
   
-        </div><hr>
-
-
-        <!-- Film-Shooting purpose feilds-->
-        <div>
+</div><hr>
+<!-- Film-Shooting purpose feilds-->
+<div>
           <h3 style="color: #007bff; font-weight: bold; text-align: center;">Film-Shooting Purpose</h3><br>
   
           <h3>Film-Shooting Production Details</h3>
@@ -1662,10 +1709,9 @@
           </div>
           
   
-        </div><hr>
-
-        <!-- Employment purpose feilds-->
-        <div>
+</div><hr>
+<!-- Employment purpose feilds-->
+<div>
           <h3 style="color: #007bff; font-weight: bold; text-align: center;">Employment Purpose</h3><br>
   
           <h3>Employment Details</h3>
@@ -1742,9 +1788,9 @@
           </div>
           
   
-        </div><hr>
- <!-- Research  Purpose feilds-->
- <div>
+</div><hr>
+<!-- Research  Purpose feilds-->
+<div>
   <h3 style="color: #007bff; font-weight: bold; text-align: center;">Research Purpose</h3><br>
 
   <h3> Research Organisation Details</h3>
@@ -1822,8 +1868,8 @@
   
 
 </div><hr>
-         <!-- Missionary  Purpose feilds-->
-         <div>
+<!-- Missionary  Purpose feilds-->
+<div>
           <h3 style="color: #007bff; font-weight: bold; text-align: center;">Missionary Purpose</h3><br>
   
           <h3> Religious Site Details</h3>
@@ -1894,10 +1940,9 @@
           </div>
           
   
-        </div><hr>
-         <!-- Conference  Purpose feilds-->
-
-        <div>
+</div><hr>
+<!-- Conference  Purpose feilds-->
+<div>
           <h3 style="color: #007bff; font-weight: bold; text-align: center;">Conference Purpose</h3><br>
   
           <h3>Conference Details</h3>
@@ -1986,10 +2031,9 @@
           </div>
           
   
-        </div><hr>
-   <!-- Journalist Purpose feilds-->
-
-   <div>
+</div><hr>
+<!-- Journalist Purpose feilds-->
+<div>
     <h3 style="color: #007bff; font-weight: bold; text-align: center;">Journalist Purpose</h3><br>
 
     <h3>Deatils Of Local Media House</h3>
@@ -2078,10 +2122,9 @@
     </div>
     
 
-  </div><hr>
-   <!-- Voluntary Purpose feilds-->
-
-   <div>
+</div><hr>
+<!-- Voluntary Purpose feilds-->
+<div>
     <h3 style="color: #007bff; font-weight: bold; text-align: center;">Voluntary Purpose</h3><br>
 
     <h3>Voluntary Work Organisation Details</h3>
@@ -2173,19 +2216,83 @@
     </div>
     
 
-  </div><hr>
+</div><hr>
 
-              <div class="button-row">
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-                
-              </div>
+
+<!-- dependent -->
+<!-- Visting Relatives Purpose feilds-->
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">visting Relatives Purpose</h3><br>
+
+  <h3>Relative Details</h3>
+  <div>
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label> Relative Name</mat-label>
+          <input matInput placeholder="Enter Relative Name">
+        </mat-form-field>
       </div>
-
-
+  
+  
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Relative Contact Number</mat-label>
+          <input matInput placeholder="Enter Relative Contact Number">
+        </mat-form-field>
+      </div>
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Relative Email ID</mat-label>
+          <input matInput placeholder="Enter Relative Email ID">
+        </mat-form-field>
+      </div>
+      
      
- 
-    </mat-step>
+      
+    </div>
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Street/Locality</mat-label>
+          <input matInput placeholder="Enter Street/Locality">
+        </mat-form-field>
+      </div>
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>City/Town</mat-label>
+          <input matInput placeholder="Enter City/Town">
+        </mat-form-field>
+      </div>
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>District</mat-label>
+          <input matInput placeholder="Enter District">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-row">
+      <div style="width: 32.5%;">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Pin Code </mat-label>
+          <input matInput placeholder="Enter Pin Code">
+        </mat-form-field>
+      </div>
+    </div>
+    
+  </div>
+  
+
+</div><hr>
+
+
+
+<div class="button-row">
+<button mat-button matStepperPrevious>Back</button>
+<button mat-button matStepperNext>Next</button>            
+</div>
+</div>
+</mat-step>
 
     <!--  Completion -->
     <mat-step>

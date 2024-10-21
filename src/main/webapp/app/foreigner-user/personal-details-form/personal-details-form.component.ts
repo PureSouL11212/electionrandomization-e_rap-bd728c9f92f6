@@ -24,7 +24,6 @@ import { Router  } from '@angular/router';
 })
 
 export class PersonalDetailsFormComponent {
-  
   rapapplicantdetails: RapApplicantDetails = new RapApplicantDetails();
   // Declare all properties before methods
   Accomodationdetails = ['hotelDetails', 'localReference'];
