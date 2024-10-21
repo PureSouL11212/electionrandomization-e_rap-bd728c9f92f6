@@ -467,7 +467,6 @@
         <section class="mhaCertificate"
           *ngIf="rapapplicantdetails.nationality === 'nationality1'|| rapapplicantdetails.birthCountry === 'country1'">
           <h2 style="color: #007bff; font-weight: bold;">MHA Clearance Certificate</h2><br>
-
           <!-- MHA Certificate -->
           <h2 style="color: #007bff; font-size: 20px;">Upload MHA Clearance Certificate</h2><br>
           <div>
@@ -476,7 +475,6 @@
               [src]="rapapplicantdetails.rapapplicantsMHAclearance.mhaClearanceCertificate" width="100" height="100"
               alt="MHA Clearance certificate">
           </div><br>
-
           <!-- Certificate valid till -->
           <div class="col-md-4">
             <mat-form-field appearance="outline" class="my-form-full-width">
@@ -488,7 +486,6 @@
               <mat-datepicker #pickermha></mat-datepicker>
             </mat-form-field>
           </div><br>
-
           <!-- Certificate Number -->
           <div class="col-md-4">
             <mat-form-field appearance="outline" class="my-form-full-width">
@@ -503,7 +500,6 @@
         <!-- Section 4: MEA Clearance Certificate -->
         <section class="meaClearance" *ngIf="rapapplicantdetails.passportDetails.passportType === 'official'">
           <h2 style="color: #007bff; font-weight: bold;">MEA Clearance Certificate</h2><br>
-
           <!-- MEA Certificate -->
           <h2 style="color: #007bff; font-size: 20px;">Upload MEA Clearance Certificate</h2><br>
           <div>
@@ -512,7 +508,6 @@
               [src]="rapapplicantdetails.rapapplicantsMEAclearance.meaClearanceCertificate" width="100" height="100"
               alt="MEA Clearance certificate">
           </div><br>
-
           <!-- Certificate valid till -->
           <div class="col-md-4">
             <mat-form-field appearance="outline" class="my-form-full-width">
@@ -524,7 +519,6 @@
               <mat-datepicker #pickermea></mat-datepicker>
             </mat-form-field>
           </div><br>
-
           <!-- Certificate Number -->
           <div class="col-md-4">
             <mat-form-field appearance="outline" class="my-form-full-width">
@@ -542,14 +536,7 @@
         </div>
       </form>
     </mat-step>
-
-
-
-
-
-
     <!-- step 4  -->
-    
 <mat-step>  
 <form>
 <!-- Tourism Purpose -->
@@ -925,10 +912,9 @@
     </div>
   </div>
 </div><hr>
-
-<!-- Visiting-Relatives Purpose -->
+<!-- Entry X Purpose -->
 <div>
-  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Visiting Relatives Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Entry X</h3><br>
   <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
   <div class="travel-info">
     <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
@@ -954,37 +940,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-<!-- dependent wife of husband of  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </form>
       <div class="button-row">
         <button mat-button matStepperPrevious>Back</button>
@@ -992,11 +947,8 @@
         <button mat-button matStepperNext>Next</button>
       </div>
     </mat-step>
-
     <mat-step>
       <ng-template matStepLabel>Purpose Feild</ng-template>
-
-
 <!-- Tourism Purpose feilds-->
 <div>
 <div>
@@ -2217,9 +2169,6 @@
     
 
 </div><hr>
-
-
-<!-- dependent -->
 <!-- Visiting Relatives Purpose feilds-->
 <div>
   <h3 style="color: #007bff; font-weight: bold; text-align: center;">Visiting Relatives Purpose</h3><br>
@@ -2272,25 +2221,14 @@
           <input matInput placeholder="Enter Pin Code">
         </mat-form-field>
       </div>
-    </div>
-    
+    </div>  
   </div>
-  
-
 </div><hr>
-
-
-
-
-
-<!-- wife of  -->
-
+<!-- wife of  feilds-->
 <div>
-  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Entry X</h3><br>
-  
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Dependent</h3><br>
   <div>
     <h3 style="color: #007bff; font-weight: bold;">Relation with the Dependent</h3><br>
-
     <mat-form-field appearance="fill" style="width: 350px;">
       <mat-label>Choose Relation with the Dependent</mat-label>
       <mat-select [(ngModel)]="selectedTree" (selectionChange)="onTreeSelect($event.value)">
@@ -2300,7 +2238,6 @@
       </mat-select>
     </mat-form-field>
   </div>
-
   <!-- Form for Native Tree -->
   <div *ngIf="showNativeTreeForm">
     <h3>Wife Of</h3>
