@@ -926,9 +926,9 @@
   </div>
 </div><hr>
 
-<!-- Visting-Relatives Purpose -->
+<!-- Visiting-Relatives Purpose -->
 <div>
-  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Visting Relatives Purpose</h3><br>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Visiting Relatives Purpose</h3><br>
   <h3 style="color: #007bff; font-weight: bold;">Travel Information</h3><br>
   <div class="travel-info">
     <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="16px">
@@ -2220,10 +2220,9 @@
 
 
 <!-- dependent -->
-<!-- Visting Relatives Purpose feilds-->
+<!-- Visiting Relatives Purpose feilds-->
 <div>
-  <h3 style="color: #007bff; font-weight: bold; text-align: center;">visting Relatives Purpose</h3><br>
-
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Visiting Relatives Purpose</h3><br>
   <h3>Relative Details</h3>
   <div>
     <div class="form-row">
@@ -2233,8 +2232,6 @@
           <input matInput placeholder="Enter Relative Name">
         </mat-form-field>
       </div>
-  
-  
       <div class="form-column">
         <mat-form-field appearance="fill" class="full-width">
           <mat-label>Relative Contact Number</mat-label>
@@ -2247,10 +2244,7 @@
           <input matInput placeholder="Enter Relative Email ID">
         </mat-form-field>
       </div>
-      
-     
-      
-    </div>
+</div>
     <div class="form-row">
       <div class="form-column">
         <mat-form-field appearance="fill" class="full-width">
@@ -2287,6 +2281,179 @@
 
 
 
+
+
+<!-- wife of  -->
+
+<div>
+  <h3 style="color: #007bff; font-weight: bold; text-align: center;">Relation with the Dependent</h3><br>
+  
+  <div>
+    <h3 style="color: #007bff; font-weight: bold;">Relation with the Dependent</h3><br>
+
+    <mat-form-field appearance="fill" style="width: 350px;">
+      <mat-label>Choose Relation with the Dependent</mat-label>
+      <mat-select [(ngModel)]="selectedTree" (selectionChange)="onTreeSelect($event.value)">
+        <mat-option *ngFor="let tree of treeOptions" [value]="tree">
+          {{ tree === 'nativeTree' ? 'Wife Of' : tree === 'ornamentalTree' ? 'Husband Of' : 'Son/Daughter Of' }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Form for Native Tree -->
+  <div *ngIf="showNativeTreeForm">
+    <h3>Wife Of</h3>
+
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Husband's Name </mat-label>
+          <input matInput placeholder="Enter Husband's name">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Contact Number</mat-label>
+          <input matInput placeholder="Enter Contact Number">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Street/Locality</mat-label>
+          <input matInput placeholder="Enter Street/Locality">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>City/Town </mat-label>
+          <input matInput placeholder="Enter City/Town">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>District</mat-label>
+          <input matInput placeholder="Enter District">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Pin Code</mat-label>
+          <input matInput placeholder="Enter Pin Code">
+        </mat-form-field>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Form for Ornamental Tree -->
+  <div *ngIf="showOrnamentalTreeForm">
+    <h3>Husband Of</h3>
+
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Wife's Name </mat-label>
+          <input matInput placeholder="Enter Wife's name">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Contact Number</mat-label>
+          <input matInput placeholder="Enter Contact Number">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Street/Locality</mat-label>
+          <input matInput placeholder="Enter Street/Locality">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>City/Town </mat-label>
+          <input matInput placeholder="Enter City/Town">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>District</mat-label>
+          <input matInput placeholder="Enter District">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Pin Code</mat-label>
+          <input matInput placeholder="Enter Pin Code">
+        </mat-form-field>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Form for Fruit Tree -->
+  <div *ngIf="showFruitTreeForm">
+    <h3>Son/Daughter Of</h3>
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Father's Name </mat-label>
+          <input matInput placeholder="Enter Father's name">
+        </mat-form-field>
+      </div>
+
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Contact Number</mat-label>
+          <input matInput placeholder="Enter Contact Number">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Street/Locality</mat-label>
+          <input matInput placeholder="Enter Street/Locality">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>City/Town </mat-label>
+          <input matInput placeholder="Enter City/Town">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>District</mat-label>
+          <input matInput placeholder="Enter District">
+        </mat-form-field>
+      </div>
+ 
+      <div class="form-column">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Pin Code</mat-label>
+          <input matInput placeholder="Enter Pin Code">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
 <div class="button-row">
 <button mat-button matStepperPrevious>Back</button>
 <button mat-button matStepperNext>Next</button>            
